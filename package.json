@@ -5,6 +5,17 @@
   "release": {
     "branches": [
       "master"
+    ],
+	"plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      "@semantic-release/git"
     ]
   },
   "dependencies": {
@@ -44,5 +55,10 @@
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "semantic-release": "^19.0.3"
+  },
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/markovskie/semantic-release.git"
   }
+
 }
