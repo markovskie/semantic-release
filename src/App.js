@@ -8,7 +8,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
 <<<<<<< HEAD
-        Hello Borkac!!!
+        Hello Borkac !!!
 =======
         Hello Borkac! gitr 
 >>>>>>> 4515b3c18a49938044bf87e5bd0d4d5eaebddd3b
