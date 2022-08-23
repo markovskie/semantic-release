@@ -54,10 +54,19 @@
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
+    "cz-conventional-changelog": "^3.3.0",
     "semantic-release": "^19.0.3"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/markovskie/semantic-release.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+	  "commit": "git-cz"
   }
 }
