@@ -41,7 +41,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
     - run: npx semantic-release
-    - run: env
+    - run: echo ${{ github.event.head_commit.message }}
       env: 
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
