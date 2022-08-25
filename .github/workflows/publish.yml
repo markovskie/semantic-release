@@ -30,7 +30,13 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-    
+  validation:
+    runs-on: ubuntu-latest
+    steps: 
+     -run: apt update && apt install -y python3-pip
+     -run: pip3 install -U Commitizen
+     -run: echo ${{ github.event.head_commit.message }} | cz ch
+     
   publish:
     runs-on: ubuntu-latest
     steps: 
