@@ -8,7 +8,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
         Hello Niki !!!
-        Ema devops girl !!!
+        Ema DEVOPS girl !!!
         </p>
         <a
           className="App-link"
