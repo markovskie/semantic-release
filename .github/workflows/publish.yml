@@ -33,15 +33,15 @@ jobs:
 
   validation:
     runs-on: ubuntu-latest
-    steps:
+    steps: 
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-     -run: apt update && apt install -y python3-pip
-     -run: pip3 install -U Commitizen
-     -run: echo ${{ github.event.head_commit.message }} | cz ch
+    - run: apt update && apt install -y python3-pip
+    - run: pip3 install -U Commitizen
+    - run: echo ${{ github.event.head_commit.message }} | cz ch
      
   publish:
     runs-on: ubuntu-latest
