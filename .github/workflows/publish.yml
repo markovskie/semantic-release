@@ -42,7 +42,7 @@ jobs:
     - run: sudo apt update && sudo apt install -y python3-pip
     - run: pip3 install -U Commitizen
     - run: echo ${{ github.event.head_commit.message }} | cz ch
-     
+     git
   publish:
     runs-on: ubuntu-latest
     steps: 
