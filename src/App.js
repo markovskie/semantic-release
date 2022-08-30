@@ -9,7 +9,7 @@ function App() {
         <p>
         Hello Niki !!!
         Ema is DEVOPS girl !!!
-        🐼 & 🐧 = ♾️
+        🐼 & 🐧 = ♾️ !!!
         </p>
         <a
           className="App-link"
