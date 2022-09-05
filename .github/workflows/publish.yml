@@ -39,6 +39,8 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
+      env: 
+        COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
     - run: sudo apt update && sudo apt install -y python3-pip
     - run: pip3 install -U Commitizen
     - run: echo "${{ env.COMMIT_MESSAGE }}"
@@ -57,4 +59,3 @@ jobs:
       env: 
         NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
