@@ -41,7 +41,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: sudo apt update && sudo apt install -y python3-pip
     - run: pip3 install -U Commitizen
-    - run: echo "$COMMIT_MESSAGE"
+    - run: echo $COMMIT_MESSAGE
     
      
   publish:
