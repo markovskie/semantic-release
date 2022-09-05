@@ -33,7 +33,7 @@ jobs:
 
   validation:
     env: 
-        COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+        commitmsg: ${{ github.event.head_commit.message }}
         EXAMPLE: test
     runs-on: ubuntu-latest
     steps: 
@@ -44,7 +44,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: sudo apt update && sudo apt install -y python3-pip
     - run: pip3 install -U Commitizen
-    - run: echo ${{ env.COMMIT_MESSAGE }}
+    - run: echo ${{ env.commitmsg }}
     - run: echo ${{ env.EXAMPLE }}
 
     
