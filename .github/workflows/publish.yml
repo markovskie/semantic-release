@@ -41,7 +41,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: sudo apt update && sudo apt install -y python3-pip && sudo apt install jq && sudo apt install curl
     - run: pip3 install -U Commitizen
-    - run: curl -s https://api.github.com/repos/markovskie/semantic-release/git/commits/${{github.event.after}} | jq .["message"]
+    - run: curl -s https://api.github.com/repos/markovskie/semantic-release/git/commits/${{github.event.after}} | jq -r .message
     #- run: git log --format=%B -n 1 ${{github.event.after}}
     - run: echo '${{toJSON(github.event)}}'
          
