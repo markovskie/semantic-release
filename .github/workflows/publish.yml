@@ -41,8 +41,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - run: sudo apt update && sudo apt install -y python3-pip
     - run: pip3 install -U Commitizen
-    - run: MSG=$(git log --format=%B -n 1 ${{github.event.after}})
-    - run: echo "${MSG}"
+    - run: git log --format=%B -n 1 ${{github.event.after}}
     - run: echo '${{toJSON(github.event)}}'
          
   publish:
