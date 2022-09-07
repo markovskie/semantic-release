@@ -39,10 +39,13 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: sudo apt update && sudo apt install -y python3-pip
+    - run: sudo apt update && sudo apt install -y python3-pip && sudo apt install jq && sudo apt install curl
     - run: pip3 install -U Commitizen
-    - run: cz check --message "${{ github.event.head_commit.message }}"
-     
+    - run: curl -s https://api.github.com/repos/markovskie/semantic-release/git/commits/${{github.event.after}} | jq -r .message | cz check
+    #- run: git log --format=%B -n 1 ${{github.event.after}}
+    #- run: echo '${{toJSON(github.event)}}'
+    #- run: cz check --message  
+         
   publish:
     runs-on: ubuntu-latest
     steps: 
