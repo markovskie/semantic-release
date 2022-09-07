@@ -44,7 +44,9 @@ jobs:
     - run: curl -s https://api.github.com/repos/markovskie/semantic-release/git/commits/${{github.event.after}} | jq -r .message | cz check
     #- run: git log --format=%B -n 1 ${{github.event.after}}
     #- run: echo '${{toJSON(github.event)}}'
+    #- run: cz check --message
     #- run: cz check --message  
+
          
   publish:
     runs-on: ubuntu-latest
